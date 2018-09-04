@@ -52,7 +52,6 @@
     <Compile Include="Forms\Switch.Designer.cs">
       <DependentUpon>Switch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Switch.resx">
@@ -80,6 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FileBusiness\FileBusiness.csproj">
+      <Project>{c71144dd-be70-4da5-9149-3d73c317c388}</Project>
+      <Name>FileBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{cefc865c-a691-419a-867e-f13438b1704d}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

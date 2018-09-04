@@ -17,7 +17,9 @@ namespace StringerExpress
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Switch());
+            var main = new Switch();
+            Controllers.SwitchController.Form(main);
+            Application.Run(main);
         }
     }
 }
