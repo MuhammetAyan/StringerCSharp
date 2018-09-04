@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringerExpress", "StringerExpress.csproj", "{006DA6B4-8FA0-4D9C-AE62-99537FAEEA68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileBusiness", "..\FileBusiness\FileBusiness.csproj", "{C71144DD-BE70-4DA5-9149-3D73C317C388}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{006DA6B4-8FA0-4D9C-AE62-99537FAEEA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{006DA6B4-8FA0-4D9C-AE62-99537FAEEA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{006DA6B4-8FA0-4D9C-AE62-99537FAEEA68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C71144DD-BE70-4DA5-9149-3D73C317C388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C71144DD-BE70-4DA5-9149-3D73C317C388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C71144DD-BE70-4DA5-9149-3D73C317C388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C71144DD-BE70-4DA5-9149-3D73C317C388}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

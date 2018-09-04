@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StringerExpress.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,8 @@ namespace StringerExpress.Controllers
 
         public static void Refresh()
         {
-            
+            List<ItemModel> Items = new List<ItemModel>();
+
         }
 
         public static void Open()
