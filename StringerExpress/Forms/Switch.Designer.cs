@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Switch));
             this.ListPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.listeleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ListPanel
@@ -38,6 +44,28 @@
             this.ListPanel.Name = "ListPanel";
             this.ListPanel.Size = new System.Drawing.Size(550, 56);
             this.ListPanel.TabIndex = 0;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipText = "Stringer Express";
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Stringer";
+            this.notifyIcon1.Visible = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listeleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
+            // 
+            // listeleToolStripMenuItem
+            // 
+            this.listeleToolStripMenuItem.Name = "listeleToolStripMenuItem";
+            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.listeleToolStripMenuItem.Text = "Listele";
+            this.listeleToolStripMenuItem.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
             // 
             // Switch
             // 
@@ -50,6 +78,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stringer Express";
+            this.Load += new System.EventHandler(this.Switch_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -57,6 +87,9 @@
         #endregion
 
         public System.Windows.Forms.FlowLayoutPanel ListPanel;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem listeleToolStripMenuItem;
     }
 }
 

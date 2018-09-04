@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StringerExpress.Controllers;
 
 namespace StringerExpress.Forms
 {
@@ -15,6 +16,16 @@ namespace StringerExpress.Forms
         public Switch()
         {
             InitializeComponent();
+        }
+
+        private void listeleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemController.ListItem();
+        }
+
+        private void Switch_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

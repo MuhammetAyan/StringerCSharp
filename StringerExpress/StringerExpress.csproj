@@ -45,9 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\SwitchController.cs" />
     <Compile Include="Forms\ItemButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemEditor.Designer.cs">
+      <DependentUpon>ItemEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ItemViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemViewer.Designer.cs">
+      <DependentUpon>ItemViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Switch.cs">
       <SubType>Form</SubType>
@@ -57,6 +70,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ItemEditor.resx">
+      <DependentUpon>ItemEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemViewer.resx">
+      <DependentUpon>ItemViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Switch.resx">
       <DependentUpon>Switch.cs</DependentUpon>
     </EmbeddedResource>

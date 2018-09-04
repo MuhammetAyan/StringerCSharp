@@ -10,7 +10,7 @@ namespace FileBusiness
 {
     public static class ItemBusiness
     {
-        public static readonly string FOLDER = System.IO.Directory.GetCurrentDirectory() + @"\Items";
+        public static readonly string FOLDER = Directory.GetCurrentDirectory() + @"\Items";
 
         public static string Path(string name)
         {
@@ -41,6 +41,7 @@ namespace FileBusiness
 
         public static ItemModel GetItemByName(string name)
         {
+            Create();
             ItemModel model = new ItemModel();
             string data = File.ReadAllText(Path(name), Encoding.UTF8);
             model.Name = name;
@@ -56,6 +57,9 @@ namespace FileBusiness
 
         public static void AddItem(ItemModel model)
         {
+            Create();
+            if (model.Path == null)
+                model.Path = new Uri(Path(model.Name));
             if(File.Exists(model.Path.LocalPath))
             {
                 throw new Exception("Aynı isimde başka bir kayıt var!");

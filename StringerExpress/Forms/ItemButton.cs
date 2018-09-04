@@ -29,8 +29,7 @@ namespace StringerExpress.Forms
 
         private void ItemButton_Click(object sender, EventArgs e)
         {
-            //Open Add Favorite Dialog
-            throw new NotImplementedException();
+            Controllers.ItemController.NewItem();
         }
     }
 }
