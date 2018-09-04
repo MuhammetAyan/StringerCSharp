@@ -36,7 +36,7 @@ namespace FileBusiness
             return favoriteItems;
         }
 
-        public static void AddFavorite(ItemModel item)
+        public static void AddFavorite(ProItemModel item)
         {
             Create();
             List<string> line = new List<string>();

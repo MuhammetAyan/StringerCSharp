@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class ItemModel : ProItemModel
+    public class ProItemModel
     {
-       public string Data { get; set; }
+        public string Name { get; set; }
+
+        public Uri Path { get; set; }
+
     }
 }

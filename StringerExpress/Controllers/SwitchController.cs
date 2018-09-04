@@ -20,7 +20,7 @@ namespace StringerExpress.Controllers
 
         public static void Refresh()
         {
-            List<ItemModel> Items = new List<ItemModel>();
+            List<ProItemModel> Items = new List<ProItemModel>();
 
         }
 
