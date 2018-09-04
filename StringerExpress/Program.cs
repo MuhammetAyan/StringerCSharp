@@ -19,7 +19,9 @@ namespace StringerExpress
             Application.SetCompatibleTextRenderingDefault(false);
             var main = new Switch();
             Controllers.SwitchController.Form(main);
+            Controllers.SwitchController.Refresh();
             Application.Run(main);
+            
         }
     }
 }

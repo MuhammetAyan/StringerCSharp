@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FileBusiness;
 
 namespace StringerExpress.Controllers
 {
     public static class SwitchController
     {
-        private static Form form;
+        private static Forms.Switch form;
 
         public static void Form(Forms.Switch form)
         {
@@ -20,8 +21,17 @@ namespace StringerExpress.Controllers
 
         public static void Refresh()
         {
-            List<ProItemModel> Items = new List<ProItemModel>();
-
+            var items = FavoriteBusiness.GetFavoriteItems();
+            var parent = form.ListPanel.Controls;
+            parent.Clear();
+            foreach (var item in items)
+            {
+                var control = new Forms.ItemButton();
+                control.Text = item.Name;
+                parent.Add(control);
+            }
+            var addControl = new Forms.ItemButton(true);
+            parent.Add(addControl);
         }
 
         public static void Open()

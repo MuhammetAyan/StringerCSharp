@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\SwitchController.cs" />
+    <Compile Include="Forms\ItemButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Switch.cs">
       <SubType>Form</SubType>
     </Compile>

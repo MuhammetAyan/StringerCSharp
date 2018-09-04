@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ListPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // ListPanel
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(550, 56);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.ListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListPanel.Name = "ListPanel";
+            this.ListPanel.Size = new System.Drawing.Size(550, 56);
+            this.ListPanel.TabIndex = 0;
             // 
             // Switch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 56);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.ListPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Switch";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stringer Express";
             this.ResumeLayout(false);
 
@@ -54,7 +56,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel ListPanel;
     }
 }
 
