@@ -12,6 +12,7 @@ namespace StringerExpress.Controllers
     public static class ItemController
     {
         public static ItemEditor newItem { get; set; }
+        public static ItemEditor editItem { get; set; }
         public static ItemViewer listItem { get; set; }
 
         public static void NewItem()
@@ -26,6 +27,26 @@ namespace StringerExpress.Controllers
             {
                 FileBusiness.ItemBusiness.AddItem(model);
                 System.Windows.Forms.MessageBox.Show("Yeni kayıt oluşturuldu.");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message, "HATA", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+
+        public static void EditItem(string name)
+        {
+            ItemModel model = FileBusiness.ItemBusiness.GetItemByName(name);
+            editItem = new ItemEditor(EditorMode.EditItem, model);
+            editItem.ShowDialog();
+        }
+
+        public static void EditItem(ItemModel model)
+        {
+            try
+            {
+                FileBusiness.ItemBusiness.EditItem(model);
+                System.Windows.Forms.MessageBox.Show("Kayıt düzenlendi.");
             }
             catch (Exception ex)
             {

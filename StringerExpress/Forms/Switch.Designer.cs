@@ -34,6 +34,7 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.listeleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yeniKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,16 +57,24 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listeleToolStripMenuItem});
+            this.listeleToolStripMenuItem,
+            this.yeniKayıtToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(126, 48);
             // 
             // listeleToolStripMenuItem
             // 
             this.listeleToolStripMenuItem.Name = "listeleToolStripMenuItem";
-            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.listeleToolStripMenuItem.Text = "Listele";
             this.listeleToolStripMenuItem.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
+            // 
+            // yeniKayıtToolStripMenuItem
+            // 
+            this.yeniKayıtToolStripMenuItem.Name = "yeniKayıtToolStripMenuItem";
+            this.yeniKayıtToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.yeniKayıtToolStripMenuItem.Text = "Yeni Kayıt";
+            this.yeniKayıtToolStripMenuItem.Click += new System.EventHandler(this.yeniKayıtToolStripMenuItem_Click);
             // 
             // Switch
             // 
@@ -90,6 +99,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem listeleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yeniKayıtToolStripMenuItem;
     }
 }
 

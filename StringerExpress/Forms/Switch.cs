@@ -27,5 +27,10 @@ namespace StringerExpress.Forms
         {
             
         }
+
+        private void yeniKayıtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemController.NewItem();
+        }
     }
 }

@@ -60,10 +60,16 @@ namespace FileBusiness
             Create();
             if (model.Path == null)
                 model.Path = new Uri(Path(model.Name));
-            if(File.Exists(model.Path.LocalPath))
+            if (File.Exists(model.Path.LocalPath))
             {
                 throw new Exception("Aynı isimde başka bir kayıt var!");
             }
+            File.WriteAllText(model.Path.LocalPath, model.Data, Encoding.UTF8);
+        }
+
+        public static void EditItem(ItemModel model)
+        {
+            Create();
             File.WriteAllText(model.Path.LocalPath, model.Data, Encoding.UTF8);
         }
     }

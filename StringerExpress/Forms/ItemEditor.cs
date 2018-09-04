@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace StringerExpress.Forms
 
         public string Path { get; set; }
 
-        public ItemEditor(EditorMode mode)
+        public ItemEditor(EditorMode mode, ItemModel model = null)
         {
             InitializeComponent();
             switch (mode)
@@ -31,6 +32,9 @@ namespace StringerExpress.Forms
                     break;
                 case EditorMode.EditItem:
                     Text = "Düzenle";
+                    textBoxName.Text = model.Name;
+                    this.Path = model.Path.LocalPath;
+                    textBoxData.Text = model.Data;
                     Save.Text = "Değiştir";
                     break;
                 default:
@@ -53,7 +57,8 @@ namespace StringerExpress.Forms
                     Controllers.ItemController.NewItem(model);
                     break;
                 case EditorMode.EditItem:
-                    throw new Exception();
+                    model.Path = new Uri(FileBusiness.ItemBusiness.Path(model.Name));
+                    Controllers.ItemController.EditItem(model);
                     break;
                 default:
                     break;

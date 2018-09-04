@@ -33,5 +33,44 @@ namespace StringerExpress.Forms
         {
             RefreshList();
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            silToolStripMenuItem.Enabled = (itemView.SelectedItems.Count != 0);
+            bool isOnlyItem = (itemView.SelectedItems.Count == 1);
+            düzenleToolStripMenuItem.Enabled = isOnlyItem;
+            çalıştırToolStripMenuItem.Enabled = isOnlyItem;
+            favorilereEkleToolStripMenuItem.Enabled = (isOnlyItem && itemView.SelectedItems[0].Group.Header == "Tümü");
+            favorilerdenÇıkarToolStripMenuItem.Enabled = (isOnlyItem && itemView.SelectedItems[0].Group.Header == "Favoriler");
+        }
+
+        private void düzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemController.EditItem(itemView.SelectedItems[0].Text);
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in itemView.SelectedItems)
+            {
+                FileBusiness.ItemBusiness.DeleteItemByName(item.Text);
+            }
+            RefreshList();
+        }
+
+        private void favorilereEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var model = new Models.ProItemModel
+            {
+                Name = itemView.SelectedItems[0].Text,
+                Path = new Uri(FileBusiness.ItemBusiness.Path(itemView.SelectedItems[0].Text)),
+            };
+            FileBusiness.FavoriteBusiness.AddFavorite(model);
+        }
+
+        private void favorilerdenÇıkarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
