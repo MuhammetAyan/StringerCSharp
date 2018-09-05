@@ -7,3 +7,6 @@ Ekleme:
 	ExecuteController sınıfı iki dosyaya bölündü. Execute.cs dosyasında motor komutları bulunuyor.
 	ExecuteModel adında yeni bir model oluşturuldu.
 	ExecuteForm oluşturuldu. Amacı Kopyalama sırasında ekrana display vermek.
+Düzenleme:
+	Switch'in klavye kısayoluyla çalışması sağlandı.
+	CTRL + SHIFT + C kısayolu sağlandı.

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,8 +12,12 @@ using StringerExpress.Controllers;
 
 namespace StringerExpress.Forms
 {
+
     public partial class Switch : Form
     {
+        [DllImport("user32.dll", CharSet = CharSet.Ansi)]
+        public static extern short GetAsyncKeyState(int Tus);
+
         public Switch()
         {
             InitializeComponent();
@@ -25,12 +30,42 @@ namespace StringerExpress.Forms
 
         private void Switch_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void yeniKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemController.NewItem();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Hide();
+            timer1.Stop();
+        }
+
+        private void switchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool CTRL, SHIFT, C;
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (!CTRL)
+                CTRL = GetAsyncKeyState((int)Keys.LControlKey) == System.Int16.MinValue + 1;
+            if (CTRL && !SHIFT)
+                SHIFT = GetAsyncKeyState((int)Keys.LShiftKey) == System.Int16.MinValue + 1;
+            if (CTRL && SHIFT && !C)
+                C = GetAsyncKeyState((int)Keys.C) == System.Int16.MinValue + 1;
+            if (CTRL && SHIFT && C)
+            {
+                CTRL = false;
+                SHIFT = false;
+                C = false;
+                Visible = true;
+            }
+
         }
     }
 }

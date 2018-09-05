@@ -50,7 +50,12 @@ namespace StringerExpress.Controllers
 
         public static void Exit()
         {
-
+            form.CTRL = false;
+            form.SHIFT = false;
+            form.C = false;
+            form.Visible = false;
         }
+        
+        
     }
 }

@@ -15,6 +15,7 @@ namespace StringerExpress.Forms
         {
             this.Size = new System.Drawing.Size(50, 50);
             this.FlatStyle = FlatStyle.Flat;
+            this.Click += ItemButton_Click1;
             if (addButton)
             {
                 this.BackColor = System.Drawing.Color.LightGreen;
@@ -27,9 +28,16 @@ namespace StringerExpress.Forms
             }
         }
 
+        private void ItemButton_Click1(object sender, EventArgs e)
+        {
+            Controllers.SwitchController.Exit();
+        }
+
         private void ItemButton_Click(object sender, EventArgs e)
         {
             Controllers.ItemController.NewItem();
         }
+
+
     }
 }
