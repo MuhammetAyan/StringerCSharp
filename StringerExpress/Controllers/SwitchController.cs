@@ -21,7 +21,7 @@ namespace StringerExpress.Controllers
 
         public static void Refresh()
         {
-            var items = FavoriteBusiness.GetFavoriteItems();
+            var items = ItemBusiness.GetItems(ItemType.Favorite);
             var parent = form.ListPanel.Controls;
             parent.Clear();
             foreach (var item in items)
@@ -43,6 +43,7 @@ namespace StringerExpress.Controllers
 
         public static void Exit()
         {
+
         }
     }
 }

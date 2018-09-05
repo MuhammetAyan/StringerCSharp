@@ -19,7 +19,9 @@ namespace StringerExpress.Forms
     {
         private EditorMode mode;
 
-        public string Path { get; set; }
+        public string Path { get { return FileBusiness.Paths.Path(textBoxName.Text, Type); } }
+
+        public ItemType Type { get; set; }
 
         public ItemEditor(EditorMode mode, ItemModel model = null)
         {
@@ -33,7 +35,7 @@ namespace StringerExpress.Forms
                 case EditorMode.EditItem:
                     Text = "Düzenle";
                     textBoxName.Text = model.Name;
-                    this.Path = model.Path.LocalPath;
+                    this.Type = model.Type;
                     textBoxData.Text = model.Data;
                     Save.Text = "Değiştir";
                     break;
@@ -46,7 +48,7 @@ namespace StringerExpress.Forms
         private void Save_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            var model = new Models.ItemModel
+            var model = new ItemModel
             {
                 Name = textBoxName.Text,
                 Data = textBoxData.Text,
@@ -57,7 +59,7 @@ namespace StringerExpress.Forms
                     Controllers.ItemController.NewItem(model);
                     break;
                 case EditorMode.EditItem:
-                    model.Path = new Uri(FileBusiness.ItemBusiness.Path(model.Name));
+                    model.Path = FileBusiness.Paths.Path(model.Name, Type);
                     Controllers.ItemController.EditItem(model);
                     break;
                 default:

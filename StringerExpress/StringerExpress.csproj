@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ConvaterController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\SwitchController.cs" />
     <Compile Include="Forms\ItemButton.cs">
@@ -110,6 +111,9 @@
       <Project>{cefc865c-a691-419a-867e-f13438b1704d}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

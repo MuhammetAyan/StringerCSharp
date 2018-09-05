@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using StringerExpress.Forms;
 using System.Windows.Forms;
 using Models;
+using FileBusiness;
 
 namespace StringerExpress.Controllers
 {
@@ -34,10 +35,10 @@ namespace StringerExpress.Controllers
             }
         }
 
-        public static void EditItem(string name)
+        public static void EditItem(ProItemModel model)
         {
-            ItemModel model = FileBusiness.ItemBusiness.GetItemByName(name);
-            editItem = new ItemEditor(EditorMode.EditItem, model);
+            ItemModel m = ItemBusiness.GetItemByName(model.Name, model.Type);
+            editItem = new ItemEditor(EditorMode.EditItem, m);
             editItem.ShowDialog();
         }
 
@@ -46,11 +47,11 @@ namespace StringerExpress.Controllers
             try
             {
                 FileBusiness.ItemBusiness.EditItem(model);
-                System.Windows.Forms.MessageBox.Show("Kayıt düzenlendi.");
+                MessageBox.Show("Kayıt düzenlendi.");
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, "HATA", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -62,32 +63,34 @@ namespace StringerExpress.Controllers
 
         public static ListViewItem[] ListRefresh(string searchText)
         {
-            List<ListViewItem> items = new List<ListViewItem>();
-            foreach (var item in FileBusiness.FavoriteBusiness.GetFavoriteItems())
-            {
-                if (item.Name.ToLower().Contains(searchText))
-                {
-                    var listItem = new ListViewItem
-                    {
-                        Text = item.Name,
-                        Group = ItemController.listItem.itemView.Groups["Favoriler"],
-                    };
-                    items.Add(listItem);
-                }
-            }
-            foreach (var item in FileBusiness.ItemBusiness.GetItems())
-            {
-                if (item.Name.ToLower().Contains(searchText))
-                {
-                    var listItem = new ListViewItem
-                    {
-                        Text = item.Name,
-                        Group = ItemController.listItem.itemView.Groups["Tümü"],
-                    };
-                    items.Add(listItem);
-                }
-            }
-            return items.ToArray();
+            var FavoriteModels = ItemBusiness.GetItems(ItemType.Favorite).Where(x => x.Name.ToLower().Contains(searchText));
+            var FavoriteItems = ConvaterController.tolistViewItems(FavoriteModels.ToArray());
+            var AllModels = ItemBusiness.GetItems(ItemType.All).Where(x => x.Name.ToLower().Contains(searchText));
+            var AllItems = ConvaterController.tolistViewItems(AllModels.ToArray());
+            return FavoriteItems.Union(AllItems.ToList()).ToArray();
+        }
+
+        public static void DeleteItem(ProItemModel model)
+        {
+            ItemBusiness.DeleteItemByName(model.Name, model.Type);
+        }
+
+        public static void DeleteItems(ProItemModel[] models)
+        {
+            foreach (var model in models)
+                DeleteItem(model);
+        }
+
+        public static void AddFavorite(ProItemModel model)
+        {
+            ItemBusiness.AddFavorite(model);
+            SwitchController.Refresh();
+        }
+
+        public static void RemoveFromFavorite(ProItemModel model)
+        {
+            ItemBusiness.RemoveFromFavorite(model);
+            SwitchController.Refresh();
         }
 
     }

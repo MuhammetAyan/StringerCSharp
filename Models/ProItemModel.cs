@@ -10,7 +10,10 @@ namespace Models
     {
         public string Name { get; set; }
 
-        public Uri Path { get; set; }
+        public string Path { get; set; }
 
+        public bool IsFavorite { get { return Type == ItemType.Favorite; } }
+
+        public ItemType Type { get; set; }
     }
 }
