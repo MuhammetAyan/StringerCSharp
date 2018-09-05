@@ -75,5 +75,11 @@ namespace StringerExpress.Forms
         {
             ItemController.listItem = null;
         }
+
+        private void çalıştırToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var model = ConvaterController.toModel(itemView.SelectedItems[0]);
+            ExecuteController.Execute(ItemBusiness.GetItemByName(model.Name, model.Type));
+        }
     }
 }

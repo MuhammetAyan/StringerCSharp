@@ -28,10 +28,17 @@ namespace StringerExpress.Controllers
             {
                 var control = new Forms.ItemButton();
                 control.Text = item.Name;
+                control.Click += Control_Click;
                 parent.Add(control);
             }
             var addControl = new Forms.ItemButton(true);
             parent.Add(addControl);
+        }
+
+        private static void Control_Click(object sender, EventArgs e)
+        {
+            var model = ItemBusiness.GetItemByName(((Control)sender).Text, ItemType.Favorite);
+            ExecuteController.Execute(model);
         }
 
         public static void Open()

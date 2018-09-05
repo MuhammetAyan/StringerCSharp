@@ -87,6 +87,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stringer Express";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Switch_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -46,7 +46,7 @@ namespace StringerExpress.Controllers
         {
             try
             {
-                FileBusiness.ItemBusiness.EditItem(model);
+                ItemBusiness.EditItem(model);
                 MessageBox.Show("Kayıt düzenlendi.");
             }
             catch (Exception ex)
@@ -92,6 +92,5 @@ namespace StringerExpress.Controllers
             ItemBusiness.RemoveFromFavorite(model);
             SwitchController.Refresh();
         }
-
     }
 }
