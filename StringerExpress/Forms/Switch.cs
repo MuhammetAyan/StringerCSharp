@@ -54,18 +54,30 @@ namespace StringerExpress.Forms
         {
             if (!CTRL)
                 CTRL = GetAsyncKeyState((int)Keys.LControlKey) == System.Int16.MinValue + 1;
-            if (CTRL && !SHIFT)
-                SHIFT = GetAsyncKeyState((int)Keys.LShiftKey) == System.Int16.MinValue + 1;
-            if (CTRL && SHIFT && !C)
-                C = GetAsyncKeyState((int)Keys.C) == System.Int16.MinValue + 1;
-            if (CTRL && SHIFT && C)
+            else
             {
-                CTRL = false;
-                SHIFT = false;
-                C = false;
-                Visible = true;
+                if (!SHIFT)
+                {
+                    SHIFT = GetAsyncKeyState((int)Keys.LShiftKey) == System.Int16.MinValue + 1;
+                    CTRL = SHIFT;
+                }
+                else
+                {
+                    if (!C)
+                    {
+                        C = GetAsyncKeyState((int)Keys.C) == System.Int16.MinValue + 1;
+                        SHIFT = C;
+                        CTRL = SHIFT;
+                    }
+                    else
+                    {
+                        CTRL = false;
+                        SHIFT = false;
+                        C = false;
+                        Visible = true;
+                    }
+                }
             }
-
         }
     }
 }
