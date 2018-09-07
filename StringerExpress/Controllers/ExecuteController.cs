@@ -27,7 +27,11 @@ namespace StringerExpress.Controllers
 
         public static void Execute(ItemModel model)
         {
-            if (IsWork) throw new Exception("Zaten çalışan bir kayıt var.");
+            if (IsWork)
+            {
+                MessageBox.Show("Zaten çalışan bir kayıt var.", "HATA",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             isWork = true;
             Model = new ExecuteModel();
             Model.Finish += Model_Finish;

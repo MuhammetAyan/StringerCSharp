@@ -18,3 +18,5 @@ Ekleme:
 	Yeni kayıt oluştururken favorilere ekleme özelliği eklendi.
 Ekleme:
 	Hakkında kısmı eklendi.
+Düzenleme:
+	ExecuteController üzerinde çalışan kayıt üzerinde yeniden kayıt açıldığında oluşan hata giderildi.
