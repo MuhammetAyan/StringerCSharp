@@ -34,10 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Save = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.checkBoxFavorite = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxData
             // 
+            this.textBoxData.AcceptsReturn = true;
+            this.textBoxData.AcceptsTab = true;
             this.textBoxData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -88,7 +91,7 @@
             this.Save.Location = new System.Drawing.Point(231, 211);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
-            this.Save.TabIndex = 2;
+            this.Save.TabIndex = 3;
             this.Save.Text = "Kaydet";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
@@ -99,17 +102,30 @@
             this.Cancel.Location = new System.Drawing.Point(312, 211);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Cancel.TabIndex = 3;
+            this.Cancel.TabIndex = 4;
             this.Cancel.Text = "İptal";
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
+            // checkBoxFavorite
+            // 
+            this.checkBoxFavorite.AutoSize = true;
+            this.checkBoxFavorite.Location = new System.Drawing.Point(12, 211);
+            this.checkBoxFavorite.Name = "checkBoxFavorite";
+            this.checkBoxFavorite.Size = new System.Drawing.Size(95, 17);
+            this.checkBoxFavorite.TabIndex = 2;
+            this.checkBoxFavorite.Text = "Favorilere ekle";
+            this.checkBoxFavorite.UseVisualStyleBackColor = true;
+            this.checkBoxFavorite.CheckedChanged += new System.EventHandler(this.checkBoxFavorite_CheckedChanged);
+            // 
             // ItemEditor
             // 
+            this.AcceptButton = this.Save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(388, 235);
+            this.Controls.Add(this.checkBoxFavorite);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.label2);
@@ -134,5 +150,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.CheckBox checkBoxFavorite;
     }
 }

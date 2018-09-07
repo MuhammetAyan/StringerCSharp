@@ -79,46 +79,46 @@
             this.favorilereEkleToolStripMenuItem,
             this.favorilerdenÇıkarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 142);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 120);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // çalıştırToolStripMenuItem
             // 
             this.çalıştırToolStripMenuItem.Name = "çalıştırToolStripMenuItem";
-            this.çalıştırToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.çalıştırToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.çalıştırToolStripMenuItem.Text = "Çalıştır";
             this.çalıştırToolStripMenuItem.Click += new System.EventHandler(this.çalıştırToolStripMenuItem_Click);
             // 
             // düzenleToolStripMenuItem
             // 
             this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.düzenleToolStripMenuItem.Text = "Düzenle";
             this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.düzenleToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
             // 
             // favorilereEkleToolStripMenuItem
             // 
             this.favorilereEkleToolStripMenuItem.Name = "favorilereEkleToolStripMenuItem";
-            this.favorilereEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.favorilereEkleToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.favorilereEkleToolStripMenuItem.Text = "Favorilere ekle";
             this.favorilereEkleToolStripMenuItem.Click += new System.EventHandler(this.favorilereEkleToolStripMenuItem_Click);
             // 
             // favorilerdenÇıkarToolStripMenuItem
             // 
             this.favorilerdenÇıkarToolStripMenuItem.Name = "favorilerdenÇıkarToolStripMenuItem";
-            this.favorilerdenÇıkarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.favorilerdenÇıkarToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.favorilerdenÇıkarToolStripMenuItem.Text = "Favorilerden çıkar";
             this.favorilerdenÇıkarToolStripMenuItem.Click += new System.EventHandler(this.favorilerdenÇıkarToolStripMenuItem_Click);
             // 
@@ -143,7 +143,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ItemViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Stringer Kayıt Listesi";
+            this.Text = "Stringer 1.0 Kayıt Listesi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemViewer_FormClosing);
             this.Load += new System.EventHandler(this.ItemViewer_Load);
             this.contextMenuStrip1.ResumeLayout(false);

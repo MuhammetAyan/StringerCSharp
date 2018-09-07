@@ -37,6 +37,7 @@
             this.yeniKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,21 +61,22 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listeleToolStripMenuItem,
-            this.yeniKayıtToolStripMenuItem});
+            this.yeniKayıtToolStripMenuItem,
+            this.çıkışToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(126, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // listeleToolStripMenuItem
             // 
             this.listeleToolStripMenuItem.Name = "listeleToolStripMenuItem";
-            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listeleToolStripMenuItem.Text = "Listele";
             this.listeleToolStripMenuItem.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
             // 
             // yeniKayıtToolStripMenuItem
             // 
             this.yeniKayıtToolStripMenuItem.Name = "yeniKayıtToolStripMenuItem";
-            this.yeniKayıtToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.yeniKayıtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.yeniKayıtToolStripMenuItem.Text = "Yeni Kayıt";
             this.yeniKayıtToolStripMenuItem.Click += new System.EventHandler(this.yeniKayıtToolStripMenuItem_Click);
             // 
@@ -87,7 +89,15 @@
             // timer2
             // 
             this.timer2.Enabled = true;
+            this.timer2.Interval = 10;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // çıkışToolStripMenuItem
+            // 
+            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.çıkışToolStripMenuItem.Text = "Çıkış";
+            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
             // 
             // Switch
             // 
@@ -116,6 +126,7 @@
         private System.Windows.Forms.ToolStripMenuItem yeniKayıtToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
     }
 }
 

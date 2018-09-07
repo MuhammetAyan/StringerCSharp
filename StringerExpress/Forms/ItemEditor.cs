@@ -37,6 +37,7 @@ namespace StringerExpress.Forms
                     textBoxName.Text = model.Name;
                     this.Type = model.Type;
                     textBoxData.Text = model.Data;
+                    checkBoxFavorite.Visible = false;
                     Save.Text = "Değiştir";
                     break;
                 default:
@@ -72,6 +73,14 @@ namespace StringerExpress.Forms
         {
             DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void checkBoxFavorite_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFavorite.Checked)
+                Type = ItemType.Favorite;
+            else
+                Type = ItemType.All;
         }
     }
 }

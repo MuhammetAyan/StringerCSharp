@@ -79,5 +79,12 @@ namespace Models
                 data += word;
             return data;
         }
+
+        /// <summary>
+        /// Toplam yerleştirilecek value sayısı
+        /// </summary>
+        /// <returns></returns>
+        public int GetValueCount { get { return ValuesIndex.Count; } }
+
     }
 }

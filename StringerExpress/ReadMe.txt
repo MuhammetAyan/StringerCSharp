@@ -10,3 +10,9 @@ Ekleme:
 Düzenleme:
 	Switch'in klavye kısayoluyla çalışması sağlandı.
 	CTRL + SHIFT + C kısayolu sağlandı.
+Düzenleme:
+	Kısayol geliştirildi.
+Ekleme:
+	Notify icon'a çıkış özelliği eklendi.
+	ExecuteForm üzerine display metni konuldu.
+	Yeni kayıt oluştururken favorilere ekleme özelliği eklendi.

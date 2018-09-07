@@ -34,6 +34,7 @@ namespace StringerExpress.Controllers
             Data = model.Data;
             Motor();
             displayForm = new Forms.ExecuteForm();
+            displayForm.TotalValue = Model.GetValueCount;
             displayForm.Show();
             OldClipboard = "";
             Clipboard.Clear();
@@ -67,8 +68,10 @@ namespace StringerExpress.Controllers
                     {
                         OldClipboard = Clipboard.GetText();
                         IsFinish = false;
+                        displayForm.ValueCount = 0;
                         return;
                     }
+                    displayForm.ValueCount++;
                     displayForm.BackColor = System.Drawing.Color.Red;
                     OldClipboard = "";
                     Clipboard.Clear();

@@ -44,38 +44,55 @@ namespace StringerExpress.Forms
             timer1.Stop();
         }
 
-        private void switchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        public bool CTRL, SHIFT, C;
 
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
-        public bool CTRL, SHIFT, C;
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (!CTRL)
-                CTRL = GetAsyncKeyState((int)Keys.LControlKey) == System.Int16.MinValue + 1;
-            else
+            for (int i = 0; i < 256; i++)
             {
-                if (!SHIFT)
+                if (GetAsyncKeyState(i) == -32767)
                 {
-                    SHIFT = GetAsyncKeyState((int)Keys.LShiftKey) == System.Int16.MinValue + 1;
-                    CTRL = SHIFT;
-                }
-                else
-                {
-                    if (!C)
+                    switch (i)
                     {
-                        C = GetAsyncKeyState((int)Keys.C) == System.Int16.MinValue + 1;
-                        SHIFT = C;
-                        CTRL = SHIFT;
+                        case 162:
+                        case 17:
+                            CTRL = true;
+                            break;
+                        case 16:
+                        case 160:
+                            if (CTRL)
+                            {
+                                SHIFT = true;
+                            }
+                            else
+                                CTRL = false;
+                            break;
+                        case 67:
+                            if (SHIFT)
+                            {
+                                //C = true;
+                                CTRL = false;
+                                SHIFT = false;
+                                Visible = true;
+                            }
+                            else
+                            {
+                                SHIFT = false;
+                                CTRL = false;
+                            }
+                            break;
+                        default:
+                            CTRL = false;
+                            SHIFT = false;
+                            C = false;
+                            break;
                     }
-                    else
-                    {
-                        CTRL = false;
-                        SHIFT = false;
-                        C = false;
-                        Visible = true;
-                    }
+                    break;
                 }
             }
         }
