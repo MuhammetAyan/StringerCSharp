@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -6,9 +7,9 @@ using System.Runtime.InteropServices;
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
 [assembly: AssemblyTitle("StringerExpress")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Kopyaladığınız metinleri arkaplanda çok hızlı işleyerek yapıştırmanıza yardımcı olur. Favori menüsünü açmak için CTRL+SHIFT+C kısayolunu kullanabilirsiniz.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("by Muhammet AYAN")]
+[assembly: AssemblyCompany("By Muhammet AYAN")]
 [assembly: AssemblyProduct("StringerExpress")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
@@ -34,3 +35,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguage("tr")]
+

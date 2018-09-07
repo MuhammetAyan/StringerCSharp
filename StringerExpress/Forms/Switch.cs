@@ -46,6 +46,17 @@ namespace StringerExpress.Forms
 
         public bool CTRL, SHIFT, C;
 
+        private void hakkındaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox about = new AboutBox();
+            about.ShowDialog();
+        }
+
+        private void switchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Visible = !Visible;
+        }
+
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

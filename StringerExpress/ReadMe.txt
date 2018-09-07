@@ -16,3 +16,5 @@ Ekleme:
 	Notify icon'a çıkış özelliği eklendi.
 	ExecuteForm üzerine display metni konuldu.
 	Yeni kayıt oluştururken favorilere ekleme özelliği eklendi.
+Ekleme:
+	Hakkında kısmı eklendi.
