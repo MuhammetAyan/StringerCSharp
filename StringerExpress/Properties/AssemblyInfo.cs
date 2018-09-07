@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
 [assembly: AssemblyTitle("StringerExpress")]
-[assembly: AssemblyDescription("Kopyaladığınız metinleri arkaplanda çok hızlı işleyerek yapıştırmanıza yardımcı olur. Favori menüsünü açmak için CTRL+SHIFT+C kısayolunu kullanabilirsiniz.")]
+[assembly: AssemblyDescription("Kopyaladığınız metinleri arkaplanda çok hızlı işleyerek yapıştırmanıza yardımcı olur.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("By Muhammet AYAN")]
 [assembly: AssemblyProduct("StringerExpress")]
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // Tüm değerleri belirtebilir veya varsayılan Derleme ve Düzeltme Numaralarını kullanmak için
 // '*' kullanarak varsayılana ayarlayabilirsiniz:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.1")]
-[assembly: AssemblyFileVersion("1.0.0.1")]
+[assembly: AssemblyVersion("1.0.0.2")]
+[assembly: AssemblyFileVersion("1.0.0.2")]
 [assembly: NeutralResourcesLanguage("tr")]
 

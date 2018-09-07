@@ -57,6 +57,12 @@ namespace StringerExpress.Forms
             Visible = !Visible;
         }
 
+        private void yardımToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpForm help = new HelpForm();
+            help.Show();
+        }
+
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

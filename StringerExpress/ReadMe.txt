@@ -22,3 +22,5 @@ Düzenleme:
 	ExecuteController üzerinde çalışan kayıt üzerinde yeniden kayıt açıldığında oluşan hata giderildi.
 Düzenleme:
 	Uygulama ikonu eklendi.
+Ekleme:
+	Yardım eklendi.
