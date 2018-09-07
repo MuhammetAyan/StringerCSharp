@@ -46,6 +46,7 @@ namespace FileBusiness
             model.Name = name;
             model.Path = Paths.Path(name, type);
             model.Data = File.ReadAllText(Paths.Path(name, type), Encoding.UTF8);
+            model.Type = type;
             return model;
         }
 

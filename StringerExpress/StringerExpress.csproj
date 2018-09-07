@@ -182,6 +182,7 @@
     <None Include="Resources\FileNames.txt" />
     <None Include="Resources\Switch.txt" />
     <None Include="Resources\Yeni Kayıt Oluşturmak.txt" />
+    <None Include="Resources\Kayıt_Çalıştırmak.txt" />
     <Content Include="Stringer.ico" />
   </ItemGroup>
   <ItemGroup>

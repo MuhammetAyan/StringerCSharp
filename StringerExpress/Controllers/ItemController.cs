@@ -16,9 +16,10 @@ namespace StringerExpress.Controllers
         public static ItemEditor editItem { get; set; }
         public static ItemViewer listItem { get; set; }
 
-        public static void NewItem()
+        public static void NewItem(bool isFavorite = false)
         {
             newItem = new ItemEditor(EditorMode.NewItem);
+            newItem.checkBoxFavorite.Checked = isFavorite;
             newItem.ShowDialog();
         }
 

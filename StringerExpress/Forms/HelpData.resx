@@ -121,6 +121,9 @@
   <data name="FileNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1254</value>
   </data>
+  <data name="Kayıt_Çalıştırmak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kayıt_Çalıştırmak.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1254</value>
+  </data>
   <data name="Switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Switch.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1254</value>
   </data>

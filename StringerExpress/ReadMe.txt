@@ -24,3 +24,6 @@ Düzenleme:
 	Uygulama ikonu eklendi.
 Ekleme:
 	Yardım eklendi.
+Düzenleme:
+	Yardım metni eklendi.
+	ItemEditor üzerinde Favori ekle seçeneği ile ilgili hatalar giderildi.

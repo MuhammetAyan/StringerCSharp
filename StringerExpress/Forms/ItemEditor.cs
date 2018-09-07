@@ -53,6 +53,8 @@ namespace StringerExpress.Forms
             {
                 Name = textBoxName.Text,
                 Data = textBoxData.Text,
+                Path = this.Path,
+                Type = this.Type
             };
             switch (mode)
             {
@@ -60,7 +62,6 @@ namespace StringerExpress.Forms
                     Controllers.ItemController.NewItem(model);
                     break;
                 case EditorMode.EditItem:
-                    model.Path = FileBusiness.Paths.Path(model.Name, Type);
                     Controllers.ItemController.EditItem(model);
                     break;
                 default:

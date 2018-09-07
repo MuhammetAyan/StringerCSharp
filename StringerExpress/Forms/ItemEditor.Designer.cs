@@ -150,6 +150,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.CheckBox checkBoxFavorite;
+        public System.Windows.Forms.CheckBox checkBoxFavorite;
     }
 }

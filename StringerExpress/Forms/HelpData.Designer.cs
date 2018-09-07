@@ -61,11 +61,23 @@ namespace StringerExpress.Forms {
         }
         
         /// <summary>
-        ///   Switch$Yeni_Kayıt_Oluşturmak benzeri yerelleştirilmiş bir dize arar.
+        ///   Switch$Yeni_Kayıt_Oluşturmak$Kayıt_Çalıştırmak benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string FileNames {
             get {
                 return ResourceManager.GetString("FileNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Kayıt Çalıştırmak
+        ///	Yeni bir kayıt çalıştırmak için switch menüsünden favori bir kayda tıklayarak çalıştırabilirsiniz.
+        ///	Yada Windows bildirim çubuğundan &quot;Stringer Express&quot; ikonuna sağ tıklayarak &quot;Listele&quot; seçeneğini seçip,
+        ///		ilgili kayda sağ tıklayıp &quot;Çalıştır&quot; seçeneği ile çalıştırabilirsiniz. benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string Kayıt_Çalıştırmak {
+            get {
+                return ResourceManager.GetString("Kayıt_Çalıştırmak", resourceCulture);
             }
         }
         
@@ -89,7 +101,12 @@ namespace StringerExpress.Forms {
         ///		Switch menüsünden + işaretli butona tıklayabilirsiniz.
         ///		Yada Windows bildirim çubuğunda &quot;Stringer Express&quot; ikonuna sağ tıklayarak &quot;Yeni Kayıt&quot; seçeneği üzerinden yeni kayıt oluşturabilirsiniz.
         ///	Kayıt Oluşturmak
-        ///		 benzeri yerelleştirilmiş bir dize arar.
+        ///		İsim kısmı üzerinden kayda bir isim veriniz.
+        ///		Metin kısmına metninizi yapıştırdığınızda ne görmek istiyorsanız yazınız.
+        ///		Kopyalayacağınız metinlerin olması gerektiği yerlere &quot;{0}&quot; şeklinde numaralandırınız.
+        ///		Örnek:
+        ///
+        ///			isim={0}, soyi [dizenin kalan bölümü kesildi]&quot;; benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Yeni_Kayıt_Oluşturmak {
             get {

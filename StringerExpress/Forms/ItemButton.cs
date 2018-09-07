@@ -35,7 +35,7 @@ namespace StringerExpress.Forms
 
         private void ItemButton_Click(object sender, EventArgs e)
         {
-            Controllers.ItemController.NewItem();
+            Controllers.ItemController.NewItem(true);
         }
 
 
