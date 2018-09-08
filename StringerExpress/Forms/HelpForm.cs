@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,13 +29,14 @@ namespace StringerExpress.Forms
         {
             try
             {
-                textBoxDetail.Text = HelpData.ResourceManager.GetString(listBoxSideBar.SelectedItem.ToString());
+                string d0 = Directory.GetCurrentDirectory() + @"\bootstrap.min.css";
+                webBrowser1.DocumentText = HelpData.ResourceManager.GetString(listBoxSideBar.SelectedItem.ToString()).Replace("<0>", d0);
             }
             catch
             {
-                textBoxDetail.Text = "Bir hata oluştu.";
+                webBrowser1.DocumentText = "<h1>Bir hata oluştu.</h1>";
             }
-            
+
         }
     }
 }

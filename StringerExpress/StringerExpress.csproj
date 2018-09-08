@@ -89,16 +89,16 @@
     <Compile Include="Forms\ExecuteForm.Designer.cs">
       <DependentUpon>ExecuteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HelpData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpData.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\HelpData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HelpData.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\ItemButton.cs">
       <SubType>Component</SubType>
@@ -134,6 +134,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpData.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>HelpData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemEditor.resx">
@@ -178,11 +179,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\bootstrap.min.css" />
+    <Content Include="bin\Release\bootstrap.min.css" />
     <Content Include="ReadMe.txt" />
     <None Include="Resources\FileNames.txt" />
-    <None Include="Resources\Switch.txt" />
-    <None Include="Resources\Yeni Kayıt Oluşturmak.txt" />
-    <None Include="Resources\Kayıt_Çalıştırmak.txt" />
+    <Content Include="Resources\Switch.html" />
+    <Content Include="Resources\Yeni Kayıt Oluşturmak.html" />
+    <Content Include="Resources\Kayıt_Çalıştırmak.html" />
     <Content Include="Stringer.ico" />
   </ItemGroup>
   <ItemGroup>

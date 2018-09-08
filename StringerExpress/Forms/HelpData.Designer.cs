@@ -70,10 +70,16 @@ namespace StringerExpress.Forms {
         }
         
         /// <summary>
-        ///   Kayıt Çalıştırmak
-        ///	Yeni bir kayıt çalıştırmak için switch menüsünden favori bir kayda tıklayarak çalıştırabilirsiniz.
-        ///	Yada Windows bildirim çubuğundan &quot;Stringer Express&quot; ikonuna sağ tıklayarak &quot;Listele&quot; seçeneğini seçip,
-        ///		ilgili kayda sağ tıklayıp &quot;Çalıştır&quot; seçeneği ile çalıştırabilirsiniz. benzeri yerelleştirilmiş bir dize arar.
+        ///   &lt;h1&gt;Kayıt Çalıştırmak&lt;/h1&gt;
+        ///&lt;p&gt;
+        ///    Yeni bir kayıt çalıştırmak için switch menüsünden favori bir kayda tıklayarak çalıştırabilirsiniz.
+        ///    Yada Windows bildirim çubuğundan &quot;Stringer Express&quot; ikonuna sağ tıklayarak &quot;Listele&quot; seçeneğini seçip,
+        ///    ilgili kayda sağ tıklayıp &quot;Çalıştır&quot; seçeneği ile çalıştırabilirsiniz.
+        ///&lt;/p&gt;
+        ///&lt;h1&gt;Kayıt çalıştığında&lt;/h1&gt;
+        ///&lt;p&gt;
+        ///    Sol altta kırmızı renkli bir gösterge açılacaktır.
+        ///    Göstergede örnek olarak &quot;0/3&quot; gibi bir yazı yazar. Bunun anlamı 3 kez kopyalama yapmanız ge [dizenin kalan bölümü kesildi]&quot;; benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Kayıt_Çalıştırmak {
             get {
@@ -82,12 +88,14 @@ namespace StringerExpress.Forms {
         }
         
         /// <summary>
-        ///   Switch Menüsü
-        ///	Favori kayıtların bulunduğu menüdür. 
-        ///	Hızlıca bu menüye ulaşarak favori kayıtlarınızı çalıştırabilirsiniz.
-        ///	Menüdeki + butonu ile yeni kayıt oluşturabilirsiniz.
-        ///	Menüyü açmak için CTRL+SHIFT+C kısayolunu kullanabilirsiniz.
-        ///	 benzeri yerelleştirilmiş bir dize arar.
+        ///   &lt;link href=&quot;{0}&quot; rel=&quot;stylesheet&quot; /&gt;
+        ///&lt;h1&gt;Switch Menüsü&lt;/h1&gt;
+        ///&lt;p class=&quot;text-danger&quot;&gt;
+        ///    Favori kayıtların bulunduğu menüdür.
+        ///    Hızlıca bu menüye ulaşarak favori kayıtlarınızı çalıştırabilirsiniz.
+        ///    Menüdeki + butonu ile yeni kayıt oluşturabilirsiniz.
+        ///    Menüyü açmak için &lt;kbd&gt;CTRL+SHIFT+C&lt;/kbd&gt; kısayolunu kullanabilirsiniz.
+        ///&lt;/p&gt; benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Switch {
             get {
@@ -96,17 +104,15 @@ namespace StringerExpress.Forms {
         }
         
         /// <summary>
-        ///   Yeni Kayıt Oluşturmak
-        ///	Kayıt Penceresi Açmak için
-        ///		Switch menüsünden + işaretli butona tıklayabilirsiniz.
-        ///		Yada Windows bildirim çubuğunda &quot;Stringer Express&quot; ikonuna sağ tıklayarak &quot;Yeni Kayıt&quot; seçeneği üzerinden yeni kayıt oluşturabilirsiniz.
-        ///	Kayıt Oluşturmak
-        ///		İsim kısmı üzerinden kayda bir isim veriniz.
-        ///		Metin kısmına metninizi yapıştırdığınızda ne görmek istiyorsanız yazınız.
-        ///		Kopyalayacağınız metinlerin olması gerektiği yerlere &quot;{0}&quot; şeklinde numaralandırınız.
-        ///		Örnek:
-        ///
-        ///			isim={0}, soyi [dizenin kalan bölümü kesildi]&quot;; benzeri yerelleştirilmiş bir dize arar.
+        ///   &lt;h1&gt;Yeni Kayıt Oluşturmak&lt;/h1&gt;
+        ///&lt;b&gt;Kayıt Penceresi Açmak için&lt;/b&gt;
+        ///&lt;p&gt;Switch menüsünden + işaretli butona tıklayabilirsiniz.&lt;/p&gt;
+        ///&lt;p&gt;Yada Windows bildirim çubuğunda &quot;Stringer Express&quot; ikonuna sağ tıklayarak &quot;Yeni Kayıt&quot; seçeneği üzerinden yeni kayıt oluşturabilirsiniz.&lt;/p&gt;
+        ///&lt;b&gt;Kayıt Oluşturmak&lt;/b&gt;
+        ///&lt;p&gt;
+        ///    İsim kısmı üzerinden kayda bir isim veriniz.
+        ///    Metin kısmına metninizi yapıştırdığınızda ne görmek istiyorsanız yazınız.
+        ///    Kopyalayacağınız metinlerin olması gerektiği yerlere &quot;{0}&quot; şeklinde numara [dizenin kalan bölümü kesildi]&quot;; benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Yeni_Kayıt_Oluşturmak {
             get {

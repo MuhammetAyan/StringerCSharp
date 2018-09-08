@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listBoxSideBar = new System.Windows.Forms.ListBox();
-            this.textBoxDetail = new System.Windows.Forms.TextBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -50,9 +50,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBoxDetail);
-            this.splitContainer1.Size = new System.Drawing.Size(638, 366);
-            this.splitContainer1.SplitterDistance = 212;
+            this.splitContainer1.Panel2.Controls.Add(this.webBrowser1);
+            this.splitContainer1.Size = new System.Drawing.Size(966, 366);
+            this.splitContainer1.SplitterDistance = 167;
             this.splitContainer1.TabIndex = 0;
             // 
             // listBoxSideBar
@@ -61,30 +61,24 @@
             this.listBoxSideBar.FormattingEnabled = true;
             this.listBoxSideBar.Location = new System.Drawing.Point(0, 0);
             this.listBoxSideBar.Name = "listBoxSideBar";
-            this.listBoxSideBar.Size = new System.Drawing.Size(212, 366);
+            this.listBoxSideBar.Size = new System.Drawing.Size(167, 366);
             this.listBoxSideBar.TabIndex = 0;
             this.listBoxSideBar.SelectedIndexChanged += new System.EventHandler(this.listBoxSideBar_SelectedIndexChanged);
             // 
-            // textBoxDetail
+            // webBrowser1
             // 
-            this.textBoxDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxDetail.Location = new System.Drawing.Point(3, 3);
-            this.textBoxDetail.Multiline = true;
-            this.textBoxDetail.Name = "textBoxDetail";
-            this.textBoxDetail.ReadOnly = true;
-            this.textBoxDetail.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDetail.Size = new System.Drawing.Size(416, 360);
-            this.textBoxDetail.TabIndex = 0;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(795, 366);
+            this.webBrowser1.TabIndex = 0;
             // 
             // HelpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 366);
+            this.ClientSize = new System.Drawing.Size(966, 366);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HelpForm";
@@ -93,7 +87,6 @@
             this.Load += new System.EventHandler(this.Help_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -104,6 +97,6 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ListBox listBoxSideBar;
-        private System.Windows.Forms.TextBox textBoxDetail;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

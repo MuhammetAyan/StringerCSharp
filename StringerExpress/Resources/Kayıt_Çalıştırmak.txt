@@ -1,4 +1,0 @@
-Kayýt Çalýþtýrmak
-	Yeni bir kayýt çalýþtýrmak için switch menüsünden favori bir kayda týklayarak çalýþtýrabilirsiniz.
-	Yada Windows bildirim çubuðundan "Stringer Express" ikonuna sað týklayarak "Listele" seçeneðini seçip,
-		ilgili kayda sað týklayýp "Çalýþtýr" seçeneði ile çalýþtýrabilirsiniz.
