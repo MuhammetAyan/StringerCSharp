@@ -63,6 +63,11 @@ namespace StringerExpress.Forms
             help.Show();
         }
 
+        private void Switch_Deactivate(object sender, EventArgs e)
+        {
+            Visible = false;
+        }
+
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

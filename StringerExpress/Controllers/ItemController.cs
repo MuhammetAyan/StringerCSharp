@@ -27,12 +27,12 @@ namespace StringerExpress.Controllers
         {
             try
             {
-                FileBusiness.ItemBusiness.AddItem(model);
-                System.Windows.Forms.MessageBox.Show("Yeni kayıt oluşturuldu.");
+                ItemBusiness.AddItem(model);
+                MessageBox.Show("Yeni kayıt oluşturuldu.");
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, "HATA", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -43,11 +43,11 @@ namespace StringerExpress.Controllers
             editItem.ShowDialog();
         }
 
-        public static void EditItem(ItemModel model)
+        public static void EditItem(string OldPath, ItemModel model)
         {
             try
             {
-                ItemBusiness.EditItem(model);
+                ItemBusiness.EditItem(OldPath, model);
                 MessageBox.Show("Kayıt düzenlendi.");
             }
             catch (Exception ex)
@@ -62,13 +62,20 @@ namespace StringerExpress.Controllers
             listItem.ShowDialog();
         }
 
-        public static ListViewItem[] ListRefresh(string searchText)
+        public static void Refresh(string searchText)
         {
             var FavoriteModels = ItemBusiness.GetItems(ItemType.Favorite).Where(x => x.Name.ToLower().Contains(searchText));
             var FavoriteItems = ConvaterController.tolistViewItems(FavoriteModels.ToArray());
             var AllModels = ItemBusiness.GetItems(ItemType.All).Where(x => x.Name.ToLower().Contains(searchText));
             var AllItems = ConvaterController.tolistViewItems(AllModels.ToArray());
-            return FavoriteItems.Union(AllItems.ToList()).ToArray();
+            var data = FavoriteItems.Union(AllItems.ToList()).ToArray();
+            listItem.itemView.Items.Clear();
+            listItem.itemView.Items.AddRange(data);
+        }
+
+        public static void Refresh()
+        {
+            Refresh(listItem.searchBox.Text);
         }
 
         public static void DeleteItem(ProItemModel model)

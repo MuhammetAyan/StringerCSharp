@@ -36,13 +36,13 @@
             this.switchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listeleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +98,11 @@
             this.yeniKayıtToolStripMenuItem.Text = "Yeni Kayıt";
             this.yeniKayıtToolStripMenuItem.Click += new System.EventHandler(this.yeniKayıtToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(122, 6);
+            // 
             // yardımToolStripMenuItem
             // 
             this.yardımToolStripMenuItem.Name = "yardımToolStripMenuItem";
@@ -111,6 +116,11 @@
             this.hakkındaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.hakkındaToolStripMenuItem.Text = "Hakkında";
             this.hakkındaToolStripMenuItem.Click += new System.EventHandler(this.hakkındaToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(122, 6);
             // 
             // çıkışToolStripMenuItem
             // 
@@ -131,16 +141,6 @@
             this.timer2.Interval = 10;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(122, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(122, 6);
-            // 
             // Switch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +154,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stringer Express";
             this.TopMost = true;
+            this.Deactivate += new System.EventHandler(this.Switch_Deactivate);
             this.Load += new System.EventHandler(this.Switch_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

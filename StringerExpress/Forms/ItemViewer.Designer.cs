@@ -154,7 +154,6 @@
 
         #endregion
         private System.Windows.Forms.ColumnHeader name;
-        private System.Windows.Forms.TextBox searchBox;
         public System.Windows.Forms.ListView itemView;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem çalıştırToolStripMenuItem;
@@ -164,5 +163,6 @@
         private System.Windows.Forms.ToolStripMenuItem favorilereEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem favorilerdenÇıkarToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader Type;
+        public System.Windows.Forms.TextBox searchBox;
     }
 }

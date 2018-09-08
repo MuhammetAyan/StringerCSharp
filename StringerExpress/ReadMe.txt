@@ -27,3 +27,9 @@ Ekleme:
 Düzenleme:
 	Yardım metni eklendi.
 	ItemEditor üzerinde Favori ekle seçeneği ile ilgili hatalar giderildi.
+Problem Tespiti:
+	Bir kayıt düzenlenirken isim değişikliği yapılınca eski kayıt silinmiyor.
+	Sorunun Business tarafında olduğu tespit edildi ve çözüldü.
+Düzenleme:
+	List refresh olayını ItemControllerda void olacak şekilde düzenlendi.
+	Switch odaklanmadığında gizlenme özelliği eklendi.

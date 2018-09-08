@@ -19,6 +19,8 @@ namespace StringerExpress.Forms
     {
         private EditorMode mode;
 
+        private string OldPath;
+
         public string Path { get { return FileBusiness.Paths.Path(textBoxName.Text, Type); } }
 
         public ItemType Type { get; set; }
@@ -38,6 +40,7 @@ namespace StringerExpress.Forms
                     this.Type = model.Type;
                     textBoxData.Text = model.Data;
                     checkBoxFavorite.Visible = false;
+                    OldPath = model.Path;
                     Save.Text = "Değiştir";
                     break;
                 default:
@@ -62,11 +65,13 @@ namespace StringerExpress.Forms
                     Controllers.ItemController.NewItem(model);
                     break;
                 case EditorMode.EditItem:
-                    Controllers.ItemController.EditItem(model);
+                    Controllers.ItemController.EditItem(OldPath, model);
                     break;
                 default:
                     break;
             }
+            Controllers.SwitchController.Refresh();
+            Controllers.ItemController.Refresh();
             this.Close();
         }
 

@@ -22,18 +22,12 @@ namespace StringerExpress.Forms
 
         private void ItemViewer_Load(object sender, EventArgs e)
         {
-            RefreshList();
-        }
-
-        public void RefreshList()
-        {
-            itemView.Items.Clear();
-            itemView.Items.AddRange(ItemController.ListRefresh(searchBox.Text));
+            ItemController.Refresh(searchBox.Text);
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            RefreshList();
+            ItemController.Refresh(searchBox.Text);
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -49,26 +43,27 @@ namespace StringerExpress.Forms
         private void düzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemController.EditItem(ConvaterController.toModel(itemView.SelectedItems[0]));
+            ItemController.Refresh(searchBox.Text);
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemController.DeleteItems(ConvaterController.toModels(itemView.SelectedItems));
-            RefreshList();
+            ItemController.Refresh(searchBox.Text);
         }
 
         private void favorilereEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var model = ConvaterController.toModel(itemView.SelectedItems[0]);
             ItemController.AddFavorite(model);
-            RefreshList();
+            ItemController.Refresh(searchBox.Text);
         }
 
         private void favorilerdenÇıkarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var model = ConvaterController.toModel(itemView.SelectedItems[0]);
             ItemController.RemoveFromFavorite(model);
-            RefreshList();
+            ItemController.Refresh(searchBox.Text);
         }
 
         private void ItemViewer_FormClosing(object sender, FormClosingEventArgs e)

@@ -67,9 +67,14 @@ namespace FileBusiness
             File.WriteAllText(model.Path, model.Data, Encoding.UTF8);
         }
 
-        public static void EditItem(ItemModel model)
+        public static void EditItem(string OldPath, ItemModel model)
         {
             Create();
+            if (model.Path != OldPath && File.Exists(model.Path))
+            {
+                throw new Exception("Aynı isimde başka bir kayıt var!");
+            }
+            File.Delete(OldPath);
             File.WriteAllText(model.Path, model.Data, Encoding.UTF8);
         }
 
