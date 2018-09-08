@@ -46,12 +46,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxData.BackColor = System.Drawing.Color.Black;
             this.textBoxData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxData.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBoxData.ForeColor = System.Drawing.Color.White;
             this.textBoxData.Location = new System.Drawing.Point(0, 61);
             this.textBoxData.Multiline = true;
             this.textBoxData.Name = "textBoxData";
+            this.textBoxData.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxData.Size = new System.Drawing.Size(387, 144);
             this.textBoxData.TabIndex = 1;
+            this.textBoxData.WordWrap = false;
             // 
             // label1
             // 
@@ -98,6 +101,7 @@
             // 
             // Cancel
             // 
+            this.Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cancel.ForeColor = System.Drawing.Color.Black;
             this.Cancel.Location = new System.Drawing.Point(312, 211);
             this.Cancel.Name = "Cancel";
@@ -109,6 +113,7 @@
             // 
             // checkBoxFavorite
             // 
+            this.checkBoxFavorite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxFavorite.AutoSize = true;
             this.checkBoxFavorite.Location = new System.Drawing.Point(12, 211);
             this.checkBoxFavorite.Name = "checkBoxFavorite";
@@ -123,6 +128,7 @@
             this.AcceptButton = this.Save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(388, 235);
             this.Controls.Add(this.checkBoxFavorite);
@@ -133,7 +139,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxData);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ItemEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Item Editor";

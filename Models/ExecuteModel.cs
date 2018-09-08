@@ -182,7 +182,7 @@ namespace Models
             get
             {
                 if (IsRecuriveBegined)
-                    return ValuesIndex.Count + Recurives.Value.GetValueCount;
+                    return ValuesIndex.Values.Distinct().Count() + Recurives.Value.GetValueCount;
                 else
                     return ValuesIndex.Count;
             }
