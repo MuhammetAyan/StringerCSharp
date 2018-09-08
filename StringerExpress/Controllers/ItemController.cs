@@ -64,6 +64,7 @@ namespace StringerExpress.Controllers
 
         public static void Refresh(string searchText)
         {
+            if (listItem == null) return;
             var FavoriteModels = ItemBusiness.GetItems(ItemType.Favorite).Where(x => x.Name.ToLower().Contains(searchText));
             var FavoriteItems = ConvaterController.tolistViewItems(FavoriteModels.ToArray());
             var AllModels = ItemBusiness.GetItems(ItemType.All).Where(x => x.Name.ToLower().Contains(searchText));
@@ -75,6 +76,7 @@ namespace StringerExpress.Controllers
 
         public static void Refresh()
         {
+            if(listItem != null)
             Refresh(listItem.searchBox.Text);
         }
 

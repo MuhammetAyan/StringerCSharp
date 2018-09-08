@@ -11,6 +11,29 @@ namespace Models
         public delegate void FinishDelegate();
         public event FinishDelegate Finish;
 
+        private bool isRecuriveBegining;
+        /// <summary>
+        /// Yinelemenin sürüp sürmediğini döndürür.
+        /// </summary>
+        public bool IsRecuriveBegining
+        {
+            get { return isRecuriveBegining; }
+        }
+
+        private bool isRecuriveBegined;
+        /// <summary>
+        /// Modelin yenilemeye sahip olup olmadığını döndürür.
+        /// </summary>
+        public bool IsRecuriveBegined
+        {
+            get { return isRecuriveBegined; }
+        }
+
+        /// <summary>
+        /// Yenilenen alanların getdata verilerini saklar.
+        /// </summary>
+        private string RecuriveTemp;
+
         public ExecuteModel()
         {
             i = 0;
@@ -27,6 +50,11 @@ namespace Models
         protected Dictionary<int, int> ValuesIndex { get; set; }
 
         /// <summary>
+        /// Yenilenen alanları tutar. Key indisi verir. Value yenilenen alanın modelini verir.
+        /// </summary>
+        protected KeyValuePair<int, ExecuteModel> Recurives { get; set; }
+
+        /// <summary>
         /// Son eklenen value index'i
         /// </summary>
         protected int i;
@@ -37,7 +65,10 @@ namespace Models
         /// <param name="word">Metin</param>
         public void AddWord(string word)
         {
-            Words.Add(word);
+            if (IsRecuriveBegining)
+                Recurives.Value.AddWord(word);
+            else
+                Words.Add(word);
         }
 
         /// <summary>
@@ -47,8 +78,16 @@ namespace Models
         /// <param name="Value">Value index numarası - {0} için 0 -</param>
         public void AddWord(string word, int Value)
         {
-            Words.Add(word);
-            ValuesIndex.Add(Words.Count - 1, Value);
+            if (IsRecuriveBegining)
+            {
+                Recurives.Value.AddWord(word, Value);
+            }
+            else
+            {
+                Words.Add(word);
+                ValuesIndex.Add(Words.Count - 1, Value);
+            }
+
         }
 
         /// <summary>
@@ -57,15 +96,50 @@ namespace Models
         /// <param name="value">Kopyalanan veri</param>
         public void AddValue(string value)
         {
-            var wordIndices = ValuesIndex.Where(x => x.Value == i).Select(y => y.Key);
-            foreach (var index in wordIndices)
-                Words[index] = value;
-            i++;
-            if (i == ValuesIndex.Count)
+            if (IsRecuriveBegined)
             {
-                Finish();
-                i = 0;
+                Recurives.Value.AddValue(value);
+                i++;
             }
+            else
+            {
+                var wordIndices = ValuesIndex.Where(x => x.Value == i).Select(y => y.Key);
+                foreach (var index in wordIndices)
+                    Words[index] = value;
+                i++;
+                if (i == ValuesIndex.Count)
+                {
+                    Finish();
+                    i = 0;
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Yenileme moduna giriş yap.
+        /// </summary>
+        /// <param name="model">Yenileme modeli</param>
+        public void BeginRecurives(ExecuteModel model)
+        {
+            Recurives = new KeyValuePair<int, ExecuteModel>(Words.Count, model);
+            model.Finish += Recurive_Finish;
+            isRecuriveBegining = true;
+            isRecuriveBegined = true;
+        }
+
+        private void Recurive_Finish()
+        {
+            RecuriveTemp += Recurives.Value.GetData();
+            Finish();
+        }
+
+        /// <summary>
+        /// Yenileme modundan çıkış yap.
+        /// </summary>
+        public void CloseRecurives()
+        {
+            isRecuriveBegining = false;
         }
 
         /// <summary>
@@ -74,9 +148,19 @@ namespace Models
         /// <returns></returns>
         public string GetData()
         {
+            int ii = 0;
             string data = "";
-            foreach (var word in Words)
-                data += word;
+            for (int I = 0; I < Words.Count; I++)
+            {
+                if (IsRecuriveBegined && ii == Recurives.Key)
+                {
+                    data += RecuriveTemp;
+                    I--;
+                }
+                else
+                    data += Words[I];
+                ii++;
+            }
             return data;
         }
 
@@ -84,7 +168,16 @@ namespace Models
         /// Toplam yerleştirilecek value sayısı
         /// </summary>
         /// <returns></returns>
-        public int GetValueCount { get { return ValuesIndex.Count; } }
+        public int GetValueCount
+        {
+            get
+            {
+                if (IsRecuriveBegined)
+                    return ValuesIndex.Count + Recurives.Value.GetValueCount;
+                else
+                    return ValuesIndex.Count;
+            }
+        }
 
     }
 }

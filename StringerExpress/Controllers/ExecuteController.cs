@@ -29,7 +29,7 @@ namespace StringerExpress.Controllers
         {
             if (IsWork)
             {
-                MessageBox.Show("Zaten çalışan bir kayıt var.", "HATA",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Zaten çalışan bir kayıt var.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             isWork = true;
@@ -83,7 +83,7 @@ namespace StringerExpress.Controllers
                 }
             }
             catch
-            {}
+            { }
         }
 
         public static void Close()

@@ -7,6 +7,11 @@ using Models;
 
 namespace StringerExpress.Controllers
 {
+    /*MOTOR KURALLARI
+     * Tek bir yenilenen alan olabilir.
+     * Yenilenen alan ile sabit alan aynı indisleri içermez.
+     */
+
     public static partial class ExecuteController
     {
         private static int i;
@@ -31,6 +36,13 @@ namespace StringerExpress.Controllers
                     TEMP = "{";
                     i++;
                     Arguman();
+                }
+                else if (Data[i] == '[')
+                {
+                    Model.AddWord(TEMP);
+                    TEMP = "[";
+                    i++;
+                    RecuriveMotor();
                 }
                 else
                     TEMP += Data[i];
@@ -64,5 +76,39 @@ namespace StringerExpress.Controllers
                 TEMP += temp;
         }
 
+        private static void RecuriveMotor()
+        {
+            if (Data[i] != '[')
+            {
+                i--;
+                return;
+            }
+            TEMP = "";
+            i++;
+            Model.BeginRecurives(new ExecuteModel());
+            for (; i < Data.Length; i++)
+            {
+                if (Data[i] == '{')
+                {
+                    Model.AddWord(TEMP);
+                    TEMP = "{";
+                    i++;
+                    Arguman();
+                }
+                else if (Data[i] == ']' && Data[i + 1] == ']')
+                {
+                    i++;
+                    Model.AddWord(TEMP);
+                    TEMP = "";
+                    Model.CloseRecurives();
+                    TEMP = "";
+                    return;
+                }
+                else
+                    TEMP += Data[i];
+            }
+            if (TEMP != "")
+                Model.AddWord(TEMP);
+        }
     }
 }

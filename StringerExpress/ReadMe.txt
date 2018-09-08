@@ -36,3 +36,5 @@ Düzenleme:
 	HelpForm'da yardım metinleri textBox yerine webBrowser üzerinde gösterilecek şekilde ayarlandı.
 	Yardım dokümanları html formuna dönüştürüldü.
 	Form başlıklarında yazan versiyon numaraları otomatik hale getirildi.
+Düzenleme:
+	Motor geliştirildi.
