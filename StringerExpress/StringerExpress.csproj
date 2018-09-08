@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\ConvaterController.cs" />
     <Compile Include="Controllers\ExecuteController.cs" />
     <Compile Include="Controllers\Execute.cs" />
@@ -180,8 +181,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\bootstrap.min.css" />
-    <Content Include="bin\Release\bootstrap.min.css" />
     <Content Include="ReadMe.txt" />
     <None Include="Resources\FileNames.txt" />
     <Content Include="Resources\Switch.html" />
@@ -200,6 +199,10 @@
       <ProductName>.NET Framework 3.5 SP1 </ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

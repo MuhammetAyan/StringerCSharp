@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StringerExpress.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,7 @@ namespace StringerExpress.Forms
 
         private void Help_Load(object sender, EventArgs e)
         {
+            this.Text = this.Text.Replace("{version}", AppController.VersionMajor);
             var fileNames = HelpData.ResourceManager.GetString("FileNames").Split(new char[] { '$' }, StringSplitOptions.RemoveEmptyEntries);
             listBoxSideBar.Items.Clear();
             listBoxSideBar.Items.AddRange(fileNames);

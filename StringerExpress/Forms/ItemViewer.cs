@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace StringerExpress.Forms
 
         private void ItemViewer_Load(object sender, EventArgs e)
         {
+            this.Text = this.Text.Replace("{version}", AppController.VersionMajor);
             ItemController.Refresh(searchBox.Text);
         }
 

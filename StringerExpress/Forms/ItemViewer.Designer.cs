@@ -143,7 +143,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ItemViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Stringer 1.0 Kayıt Listesi";
+            this.Text = "Stringer {version} Kayıt Listesi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemViewer_FormClosing);
             this.Load += new System.EventHandler(this.ItemViewer_Load);
             this.contextMenuStrip1.ResumeLayout(false);
