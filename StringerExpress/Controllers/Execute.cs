@@ -68,7 +68,7 @@ namespace StringerExpress.Controllers
                 {
                     temp += Data[i];
                     TEMP += temp;
-                    i++;
+                    //i++;
                     return;
                 }
             }

@@ -96,21 +96,30 @@ namespace Models
         /// <param name="value">Kopyalanan veri</param>
         public void AddValue(string value)
         {
-            if (IsRecuriveBegined)
+            //Gelen value nun hangi indis olduğunu sapta = i
+            //Bu indisin hangi modelde olduğunu bul
+            //Bu modelde olup olmadığı:
+            bool InThisModel = ValuesIndex.Values.Contains(i);
+            //Eğer çift model varsa ve bu modelde değilse
+            if (IsRecuriveBegined && !InThisModel)
             {
-                Recurives.Value.AddValue(value);
-                i++;
+                Recurives.Value.AddValue(value); // Recurive modele ekle
+                i++; //Bu model için de value artmış sayılır.
             }
-            else
+            else //Bu modeldeyse
             {
                 var wordIndices = ValuesIndex.Where(x => x.Value == i).Select(y => y.Key);
                 foreach (var index in wordIndices)
                     Words[index] = value;
                 i++;
-                if (i == ValuesIndex.Count)
+                //Recurive model varsa
+                if (IsRecuriveBegined)
+                    Recurives.Value.i++; //Recurive model için de değer arttır.
+                //Recurive yokken model tek başına bitebilir.
+                if (!IsRecuriveBegined && i > ValuesIndex.Values.Max())
                 {
                     Finish();
-                    i = 0;
+                    i = ValuesIndex.Values.Min();
                 }
             }
 
