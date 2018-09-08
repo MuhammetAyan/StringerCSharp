@@ -54,6 +54,7 @@
   <PropertyGroup>
     <ApplicationIcon>Stringer.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
